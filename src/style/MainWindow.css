@@ -1,0 +1,175 @@
+.views-container {
+  /* grid-area: addtab; */
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 2rem 1.4rem 50%;
+}
+
+.viewport {
+  grid-area: tabs;
+  overflow: hidden;
+}
+.tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 2px;
+  margin: 0 0.3em 0 0.3em;
+  justify-content: start;
+  grid-column-gap: 5px;
+}
+
+.tab {
+  background-color: rgb(29, 31, 32);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid rgb(61, 60, 60);
+  width: 6em;
+  height: 1.8em;
+  color: white;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  /* display: grid;
+  grid-template-columns: 90% 10%; */
+  /*   text-align: center;
+  height: 1.4rem;
+  width: 100%;
+  margin-left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.channel-name {
+  grid-column: 1 / 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.close-btn {
+  grid-column: 2 / 3;
+  align-self: center;
+}
+
+.close-btn:hover {
+  cursor: default;
+}
+
+.tab-selected,
+.tab:hover {
+  cursor: pointer;
+  background-color: rgb(50, 53, 53);
+  color: white;
+}
+
+.tab:hover {
+  background-color: rgb(128, 129, 129);
+}
+
+.add-tab {
+  background-color: red;
+  border: 2px solid blue;
+  color: white;
+}
+
+.views {
+  grid-area: main;
+  /* width: 100%; */
+  display: grid;
+}
+.view {
+  background-color: rgb(29, 31, 32);
+  border-radius: 5px;
+  border: 2px solid rgb(44, 42, 42);
+  display: grid;
+  grid-template-rows: 1.5em 1fr 0.2fr;
+  grid-template-areas: "chattitle" "chats" "chatinput";
+  color: white;
+  row-gap: 5px;
+  min-height: 0;
+}
+
+.view .chat-title {
+  grid-area: chattitle;
+  align-self: center;
+  justify-self: center;
+  padding: 0.3rem;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.view .chats {
+  grid-area: chats;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(63, 63, 63);
+}
+
+.view .inputwindow {
+  grid-area: chatinput;
+}
+
+.view form {
+  /* display: grid;
+  grid-template-columns: 1fr 0.1fr;
+  grid-template-areas: "textarea button"; */
+  display: flex;
+}
+
+.view textarea {
+  grid-area: textarea;
+  outline: none;
+  background-color: lightgray;
+  resize: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgb(46, 43, 43);
+  color: white;
+}
+
+.view .inputwindow button {
+  grid-area: button;
+  background-color: rgb(29, 31, 32);
+  border: none;
+  border-radius: 5px;
+  padding: 0 2px;
+  outline: none;
+  transform: translateX(0) translateY(0);
+  transition: transform 0.2s;
+}
+.view .inputwindow button:active {
+  transform: translateX(1px) tranlateY(-1px);
+  background-color: rgb(55, 57, 58);
+}
+
+.view .inputwindow button span {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.view textarea {
+  background-color: rgb(46, 43, 43);
+  color: white;
+}
+
+.view .inputwindow button span:hover {
+  cursor: pointer;
+}
+
+.view svg {
+  fill: lightblue;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.view .inputwindow button:active svg {
+  stroke: white;
+  stroke-width: 0.1em;
+}
+
+.blankview {
+  color: white;
+}

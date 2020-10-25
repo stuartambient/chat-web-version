@@ -1,0 +1,97 @@
+/* .nav-items {
+  margin: 1em 1em;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: repeat(6, 2em);
+  grid-row-gap: 15px;
+} */
+.nav-items {
+  grid-area: menu;
+  display: grid;
+  grid-template-columns: repeat(6, 2.5rem);
+  align-self: center;
+  padding-left: 1em;
+}
+
+.nav-menu {
+  background-color: seagreen;
+
+  /* border: 2px solid silver; */
+  width: 2em;
+  height: 2em;
+  /* grid-row: 1 / 2;
+  grid-column: 1 / 2; */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.nav-menu > * {
+  pointer-events: none;
+}
+
+.nav-menu:hover {
+  cursor: pointer;
+}
+
+/* .menu-icon-div {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+} */
+
+.nav-item {
+  /*   display: none; */
+  /*   margin-left: 0.4em; */
+}
+
+/* .nav-item-display {
+  display: grid;
+} */
+
+.icon-wrapper {
+  /* grid-column: 1 / 2; */
+  width: 2em;
+  height: 2em;
+  /* align-self: center; */
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.icon-wrapper > * {
+  pointer-events: none;
+}
+
+.hover-text {
+  grid-area: hover;
+  color: white;
+  align-self: center;
+  justify-self: center;
+}
+
+.nav-icon {
+  grid-column: 2 / 3;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.no-display {
+  display: none;
+}
+.nav-group {
+  display: grid;
+}
+
+.all-channels,
+.add-channel,
+.search-channels,
+.my-messages,
+.my-account {
+  /* background-color: light */
+  /* color: darkseagreen;  */
+  cursor: pointer;
+}

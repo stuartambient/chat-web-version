@@ -1,0 +1,75 @@
+.message {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "name message icon";
+  word-break: break-all;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  margin: 0.5em;
+  border: 1px solid #5e6969;
+  border-radius: 5px;
+  align-items: center;
+}
+
+/* .message span {
+  color: black;
+} */
+
+.message-name {
+  grid-area: name;
+  color: lightsalmon;
+  justify-items: start;
+}
+
+.message-msg {
+  grid-area: message;
+  color: white;
+  width: 90%;
+  margin: 0.2em 0 0.2em 0;
+}
+
+.message p {
+  color: white;
+  margin: 0.8em;
+}
+
+.message blockquote {
+  border-left: 2px solid gray;
+  color: goldenrod;
+}
+
+.message blockquote p {
+  color: goldenrod;
+  font-size: 0.8em;
+}
+
+.message-icon {
+  grid-area: icon;
+}
+
+.message-icon:hover {
+  cursor: pointer;
+}
+
+.message a:link {
+  color: lightseagreen;
+}
+
+.message a:hover {
+  color: rgb(50, 221, 213);
+}
+
+.message a:visited {
+  color: gray;
+}
+
+.message a:active {
+  color: rgb(99, 212, 207);
+}
+
+.message pre,
+.message code {
+  background-color: rgba(26, 25, 25, 0.74);
+  /* padding: 0.2em; */
+  border-radius: 5px;
+}

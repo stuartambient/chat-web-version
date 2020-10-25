@@ -1,0 +1,30 @@
+.login,
+.signup {
+  grid-row: 2 / 3;
+
+  color: white;
+  justify-self: center;
+  align-self: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  align-self: end;
+  height: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  grid-column: 2 / 3;
+  background-color: lightseagreen;
+  justify-self: end;
+  width: 98%;
+}
+
+.signup {
+  grid-column: 3 / 4;
+  background-color: lightsalmon;
+  justify-self: start;
+  width: 98%;
+}

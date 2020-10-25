@@ -1,0 +1,13 @@
+.submit-button {
+  height: 2.5rem;
+}
+
+.submit-button:hover {
+  border: 1px solid gold;
+  background-color: lightsalmon;
+}
+
+.submit-button:active {
+  box-shadow: 0 5px gray;
+  transform: translateY(5px);
+}

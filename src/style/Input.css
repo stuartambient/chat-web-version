@@ -1,0 +1,14 @@
+.username,
+.password,
+.email,
+.submit-button {
+  outline: none;
+  width: 100%;
+  /*  margin: 10% 0; */
+  border: 5px solid darkcyan;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}

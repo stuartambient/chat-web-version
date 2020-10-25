@@ -1,0 +1,6 @@
+.form-message {
+  grid-row: 4 /5;
+  color: white;
+  align-self: start;
+  justify-self: center;
+}

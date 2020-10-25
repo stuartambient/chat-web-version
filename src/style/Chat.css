@@ -1,0 +1,159 @@
+.chat[data-layout="center"] {
+  grid:
+    [row1-start] "menu menu input input . ." 4rem [row1-end]
+    [row2-start] "hover hover msg msg . ." 2rem [row2-end]
+    [row3-start] ". . tabs tabs . ." 2rem [row3-end]
+    [row4-start] ". left main main right ." 200px [row4-end]
+    [row5-start] ". left main main right ." 200px [row5-end]
+    [row6-start] ". left main main right ." 200px [row6-end]
+    [row7-start] ". domexpandleft . . domexpandright . " 0.2fr [row7-end]
+    / 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+  column-gap: 10px;
+}
+.chat[data-layout="left-center"] {
+  grid:
+    [row1-start] "menu menu input input . ." 4rem [row1-end]
+    [row2-start] "hover hover msg msg . ." 2rem [row2-end]
+    [row3-start] ". tabs tabs tabs . ." 2rem [row3-end]
+    [row4-start] ". main main main right ." 200px [row4-end]
+    [row5-start] ". main main main right ." 200px [row5-end]
+    [row6-start] ". main main main right ." 200px [row6-end]
+    [row7-start] ". . domexpandleft domexpandright . ." 1fr [row7-end]
+    / 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+  column-gap: 10px;
+}
+.chat[data-layout="right-center"] {
+  grid:
+    [row1-start] "menu menu input input . ." 4rem [row1-end]
+    [row2-start] "hover hover msg msg . ." 2rem [row2-end]
+    [row3-start] ". . tabs tabs tabs ." 2rem [row3-end]
+    [row4-start] ". left main main main ." 200px [row4-end]
+    [row5-start] ". left main main main ." 200px [row5-end]
+    [row6-start] ". left main main main ." 200px [row6-end]
+    [row7-start] ". . domexpandleft domexpandright . ." 1fr [row7-end]
+    / 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+  column-gap: 10px;
+}
+.chat[data-layout="all"] {
+  grid:
+    [row1-start] "menu menu input input . ." 4rem [row1-end]
+    [row2-start] "hover hover msg msg . ." 2rem [row2-end]
+    [row3-start] ". tabs tabs tabs tabs ." 2rem [row3-end]
+    [row4-start] ". main main main main ." 200px [row4-end]
+    [row5-start] ". main main main main ." 200px [row5-end]
+    [row6-start] ". main main main main ." 200px [row6-end]
+    [row7-start] ". . domexpandleft domexpandright . ." 1fr [row7-end]
+    / 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+}
+
+.left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* .left {
+  grid-area: left;
+  display: grid;
+  align-items: start;
+  grid-template-rows: 100%;
+} */
+
+.right {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-window {
+  color: white;
+}
+
+.channels {
+  color: white;
+}
+
+/* code from grid guide */
+
+/* .container {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 1fr [third-line] auto [last-line];
+} 
+
+
+/* CAN HAVE MORE THAN ONE NAME
+
+.container {
+  grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+}
+
+/* REAPEAT IF SAME DIMESIONS
+.container {
+  grid-template-columns: repeat(3, 20px [col-start]);
+}
+
+// REFERECING LINES WITH SAME NAME
+.item {
+  grid-column-start: col-start 2;
+}
+
+// CONCERNING GRID AREAS (NON NAMED GRID LINES)
+Notice that you’re not naming lines with this syntax, just areas. 
+When you use this syntax the lines on either end of the areas are actually 
+getting named automatically. If the name of your grid area is foo, the name 
+of the area’s starting row line and starting column line will be foo-start, 
+and the name of its last row line and last column line will be foo-end. 
+This means that some lines might have multiple names, such as the far left 
+line in the above example, which will have three names: header-start, 
+main-start, and footer-start.
+
+//place-items
+place-items sets both the align-items and justify-items 
+properties in a single declaration.
+
+If the second value is omitted, the first value is assigned to 
+both properties.
+
+//justify-content
+// align-content
+//place-content
+
+Sometimes the total size of your grid might be less than the 
+size of its grid container. This could happen if all of your 
+grid items are sized with non-flexible units like px. In 
+this case you can set the alignment of the grid within the 
+grid container. This property aligns the grid along the 
+inline (row) axis (as opposed to align-content which aligns 
+the grid along the block (column) axis).
+
+// grid-auto-rows / grid-auto-columns for defining implicit grid elements
+
+// grid-auto-flow: row | column | row dense | column dense;
+
+grid-template
+
+A shorthand for setting grid-template-rows, grid-template-columns, 
+and grid-template-areas in a single declaration.
+grid-template:
+    [row1-start] "header header header" 25px [row1-end]
+    [row2-start] "footer footer footer" 25px [row2-end]
+    / auto 50px auto;
+
+    // Other keywords
+    When sizing rows and columns, you can use all the lengths you are used to, 
+    like px, rem, %, etc, but you also have keywords like min-content, max-content, 
+    auto, and perhaps the most useful, fractional units. grid-template-columns: 
+    200px 1fr 2fr min-content;
+    You also have access to a function which can help set boundaries for otherwise 
+    flexible units. For example to set a column to be 1fr, but shrink no further 
+    than 200px: grid-template-columns: 1fr minmax(200px, 1fr);
+    There is repeat() function, which saves some typing, like making 10 columns: 
+    grid-template-columns: repeat(10, 1fr);
+    Combining all of these things can be extremely powerful, like grid-template-
+    columns: repeat(auto-fill, minmax(200px, 1fr)); See the demo at the top of 
+    the page about “The Most Powerful Lines in Grid”.
+
+*/
